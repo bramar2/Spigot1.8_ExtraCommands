@@ -1,0 +1,125 @@
+name: ExtraCommands
+description: 1.8 Custom-made plugin. Event-based commands, in-game command for console, disabling for usage with :, [Overworld/Nether/The End] disable, custom enchantments, command shortcuts with GUI, fully working anti-packets command, custom-made events for enchants, anti-url from message, fully working combat npc trait, custom join/leave message, semi-hypixel tnt and fireball, working damage system for all npcs depending on item on their hand, nick-supported /list AND /msg command, gamemodes restore after relogging, double jump system, nick actionbar, freezing players, vanished players can no longer be tracked, custom nicking (with not-possible characters and spaces), and more.
+version: 1.0
+main: me.bramar.extracommands.Main
+depend: [ProtocolLib, PacketWrapper, LuckPerms]
+softdepend: [EazyNick, Citizens]
+author: bramar
+commands:
+    test:
+        usage: /<command>
+        description: Test command for ExtraCommands
+    cnickother:
+        usage: /<command>
+        description: This command is not used and only for TabComplete.
+        aliases: [cnickothers, customnickother, customnickothers]
+    hypixeltnt:
+        usage: /<command>
+        description: Toggles whether the TNT is hypixel bedwars's tnt
+    hypixelfireball:
+        usage: /<command>
+        description: Toggles whether the Fireball is hypixel bedwars's fireball.
+    punchbot:
+        usage: /<command>
+        description: For the PunchBot citizens trait.
+    customenchantment:
+        usage: /<command>
+        description: For custom enchantments.
+        aliases: [ce, customenchantments]
+    broadcast:
+        usage: /<command>
+        description: Broadcasts a message
+        aliases: [bc]
+    console:
+        usage: /<command>
+        description: Performs a command through console
+        aliases: [console]
+    cosmetic:
+        usage: /<command>
+        description: UltraCosmetics shortcut command
+        aliases: [cosmetics]
+    demo:
+        usage: /<command>
+        description: Demo/credits screen
+    doublejump:
+        usage: /<command>
+        description: Toggles doublejump
+    ecreload:
+        usage: /<command>
+        description: Reloads ExtraCommands configuration
+    freeze:
+        usage: /<command>
+        description: Freeze players
+    fulldown:
+        usage: /<command>
+        description: Console command to make the server fully down
+    ignore:
+        usage: /<command>
+        description: Ignores players from /msg
+    list:
+        usage: /<command>
+        description: Shows a list of online players
+        aliases: [who]
+    msg:
+        usage: /<command>
+        description: Message players
+        aliases: [pm, emsg, w, whisper, ewhisper]
+    msgmute:
+        usage: /<command>
+        description: Mutes players from /msg
+        aliases: [messagemute]
+    msgtoggle:
+        usage: /<command>
+        description: Toggles receiving messages
+        aliases: pmtoggle
+    nightvision:
+        usage: /<command>
+        description: Toggles permanent fullbright
+    ping:
+        usage: /<command>
+        description: Retrieve a player's ping
+    push:
+        usage: /<command>
+        description: Pushes a player
+    reply:
+        usage: /<command>
+        description: Replies to the previous message
+        aliases: [r, er, ereply]
+    socialspy:
+        usage: /<command>
+        description: Toggles spying through messages
+    togglechat:
+        usage: /<command>
+        description: Enables/disables chat
+        aliases: [tc]
+    vjump:
+        usage: /<command>
+        description: Simulates vanilla jump
+permissions:
+    e.*:
+        description: Luckperms for ALL ExtraCommands perms. This is ONLY for admins! Also for luckperms permission registration
+        children:
+            e.usesyntax: true
+            e.seeplugins: true
+            e.nightvision.exempt: false
+            e.cnick: true
+            e.cnickothers: true
+            e.useconsole: true
+            e.msgmute: true
+            e.socialspy: true
+            e.test: true
+            e.reload: true
+            e.togglechat: true
+            e.bypasschat: true
+            e.pingothers: true
+            e.freeze: true
+            e.luckperms: true
+            e.hypixelfireball: true
+            e.hypixeltnt: true
+            punchbot.*: true
+            e.customenchantment: true
+    e.luckperms:
+        description: For luckperms commands.
+        children:
+            e.luckperms.group: true
+            e.luckperms.user: true

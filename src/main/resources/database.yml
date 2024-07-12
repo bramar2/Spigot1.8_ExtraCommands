@@ -1,0 +1,15 @@
+# This file is for configuration and database. DO NOT CHANGE DATABASE THAT IS LIKE "123891: creative"
+default-gamemode: creative
+gamemode:
+    1293this-12931293is-193so-2193config-1238123can-28391register-13941this-138-as-a-section: creative # do not remove
+msgmute:
+- 68eb9a5e-70f5-4285-8a68-b6c0f44f1d97 # do not remove
+msgtoggle:
+- 68eb9a5e-70f5-4285-8a68-b6c0f44f1d97 # do not remove
+ignore-list:
+  68eb9a5e-70f5-4285-8a68-b6c0f44f1d97:
+    - 68eb9a5e-70f5-4285-8a68-b6c0f44f1d97
+    - 68eb9a5e-70f5-4285-8a68-b6c0f44f1d97
+    - 68eb9a5e-70f5-4285-8a68-b6c0f44f1d97
+ignore-exempt:
+- ignore

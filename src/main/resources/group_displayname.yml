@@ -1,0 +1,74 @@
+# Group displayname
+# Its currently only used on /list
+# Using luckperms group
+# anything not listed is gonna be put on default
+# Format:
+# id_(id starting from 1):
+#   displayname: (displayName)
+#   prefix: (prefix)
+#   id: (id)
+#   groups:
+#   - (groupId_1)
+#   - (groupId_2)
+# Example:
+# id_1:
+#   displayname: "&7Member"
+#   prefix: "&7"
+#   id: "default"
+#   groups:
+#   - default
+#   - worldedit
+# Color codes work
+# Prefix are used to check groups at nicks
+
+chat_format: "{displayname}&r: {msg}"
+
+id_1:
+  displayname: "&7Member"
+  id: "default"
+  prefix: "&7"
+  groups:
+  - default
+  - worldedit
+id_2:
+  displayname: "&bMVP"
+  prefix: "&b[MVP] "
+  id: "mvp"
+  groups:
+  - mvp
+id_3:
+  displayname: "&bMVP&c+&b"
+  prefix: "&b[MVP&c+&b] "
+  id: "mvpplus"
+  groups:
+  - mvpplus
+id_4:
+  displayname: "&6MVP&c++&6"
+  prefix: "&6[MVP&c++&6] "
+  id: "mvpplusplus"
+  groups:
+  - mvpplusplus
+id_5:
+  displayname: "&cYoutube"
+  prefix: "&c[YOUTUBE] "
+  id: "youtube"
+  groups:
+  - youtube
+id_6:
+  displayname: "&aStaff"
+  prefix: "multiple_prefix"
+  id: "staff"
+  prefixes:
+  - "&2[MOD] "
+  groups:
+  - mod
+id_7:
+  displayname: "&cAdmins"
+  prefix: "multiple_prefix"
+  id: "admins"
+  prefixes:
+  - "&c[ADMIN] "
+  - "&c[OWNER] "
+  groups:
+  - admin
+  - owner

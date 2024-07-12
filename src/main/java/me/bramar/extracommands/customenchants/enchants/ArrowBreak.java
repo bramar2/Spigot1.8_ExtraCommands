@@ -1,0 +1,42 @@
+package me.bramar.extracommands.customenchants.enchants;
+
+import me.bramar.extracommands.customenchants.CustomEnchantment;
+import me.bramar.extracommands.customenchants.EnchantmentTarget;
+import me.bramar.extracommands.customenchants.EventStore;
+import me.bramar.extracommands.customenchants.EventType;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+
+import java.util.Collections;
+import java.util.List;
+
+public class ArrowBreak extends CustomEnchantment {
+
+	public ArrowBreak() {
+		super(3509, EnchantmentTarget.AXE, 6, 1, "Arrow Break", "&bArrow Break", "&bChance for arrows to bounce off "
+				+ "while holding this item");
+	}	
+
+	@Override
+	public int getMultiplier() {
+		return 4;
+	}
+
+	@Override
+	public List<EventType> listeningEventsTo() {
+		return Collections.singletonList(EventType.DAMAGED_BY_PROJECTILE);
+	}
+
+	@Override
+	public void onEvent(EventStore e) {
+		try {
+			int enchantLevel = getEnchantLevel(e.getPlayer(), false);
+			if(checkSuccess(enchantLevel * 3)) {
+				EntityDamageByEntityEvent event = e.cast(EntityDamageByEntityEvent.class);
+				event.setCancelled(true);
+			}
+		}catch(Exception e1) {
+			e1.printStackTrace();
+		}
+	}
+
+}

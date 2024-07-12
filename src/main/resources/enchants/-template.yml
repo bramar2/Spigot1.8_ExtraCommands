@@ -1,0 +1,51 @@
+########################################
+# Template for Custom YML enchants     #
+# Made by bramar                       #
+# Not all of this is required          #
+########################################
+
+# Internal name, for example Fortune (like used in /ce get)
+name: "Fortune"
+# Internal ID, Optional. (If not put, will do the next available CustomEnchant ID
+# (A removal of an enchantment might ruin all items: id switch, like fortune from 39 -> 40,
+# then a pickaxe with id 39 will not work and work with the enchantment 39 which might be
+# silk touch (example))
+id: 0
+# Display name & Description. Color codes work
+display_name: "&aFortune"
+description: "&aDrops more items on breaking blocks"
+# Available:
+# SWORDS, AXE, SWORDS_AND_AXES, HELMET, CHESTPLATE, LEGGINGS, BOOTS
+# ARMOR, BOW, FISHING_ROD, BOW_AND_ROD, SHOVEL, PICKAXE, HOE
+# TOOLS, TOOLS_NO_HOE, SHEARS, FLINT_AND_STEEL, SHEARS_AND_C4
+# TOOLS_V2 (with shears and Flint and steel), WEAPON, ALL (all above)
+# ALL_ITEMS
+target: ARMOR
+# maxlvl > startlvl
+startlvl: 3
+maxlvl: 3
+# Optional. Default: 4, See minecraft wiki for Anvil Mechanics
+multiplier: 4
+# Optional. Conflicted Enchantment. If minecraft enchant name (like fortune) doesn't work, try bukkit (LOOT_BONUS_BLOCKS)
+conflicts:
+  - LOOT_BONUS_BLOCKS
+# Optional. Although without this, the enchantment will do nothing.
+abilities:
+  # For example, this ability strikes lightning on the damaged entity with a 25% chance and a 5 tick cooldown
+  # when the damaged entity is below or equal to half health
+  1: # name '1' whatever you want
+    event: damage
+    lvl:
+      - "LVL:>:30" # The level this functions on, all of them must be correct for this to run!
+               # Keep 'LVL'
+               # LVL:NumberModifier:Integer
+    additive: true # Additive means all enchant level found is added together
+                   # Optional, will be false on default. Typically armor enchants like Protection are additive
+                   # But item enchants (tools) are not additive
+    ticks: 3 # Optional. This only works if 'event' is 'tick'. Required if event is tick, or an error will occur
+    chance: 25 # Optional, with default 100%. Chance this will happen, 100 for 100%, 1.5 for 1.5%.
+    cooldown: 5 # Optional, with default 0. This is in ticks, 20 ticks = 1 second
+    check: # Optional. If none exist, it will only check 'chance' and 'cooldown' (if exists)
+      - "DAMAGED_HEALTH:<=:10"
+    command: # Required
+      - "DAMAGED_LIGHTNING"

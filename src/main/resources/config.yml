@@ -1,0 +1,17 @@
+
+# Hypixel TNT and Fireball
+hypixel-tnt: false
+hypixel-fireball: false
+# Damage value || 1 Damage = Half a heart
+hypixel-tnt-damage: 2.0
+
+# Leave & Join message
+# '' for normal
+# {entity} for entity display name
+join-msg: ''
+leave-msg: ''
+
+# Fulldown password. Include this in one of the args in commands that wants to be runned (It will be replaced).
+# Usage: Include '#<pass>'
+# Note: '' means no pass
+fulldown-pass: ''
